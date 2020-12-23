@@ -19,13 +19,27 @@ $yellow: #ffe915;
   }
 
   .speciality-content {
-    padding: 0px 39px;
-    padding-bottom: 26px;
+    padding: 26px 39px;
+    padding-right: 0;
+    ul {
+      padding: 0;
+      b {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      li {
+        margin-bottom: 20px;
+        p {
+          padding-left: 10px;
+        }
+      }
+    }
   }
 
   .img-outer {
     position: relative;
-    height: 35em;
+    height: 350px;
     overflow: hidden;
     img {
       height: 100%;

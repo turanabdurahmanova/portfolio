@@ -1,0 +1,48 @@
+<section class="works-sc" *ngIf="works.length > 0; else load">
+  <div class="flex wrap" style="min-height: calc(100vh - 40px);">
+    <div class="card col-33" *ngFor="let work of works">
+      <div class="img-outer">
+        <img src="{{work.img}}" alt="3in" />
+      </div>
+      <h2>{{ work.title }}</h2>
+      <div class=" content">
+        <div class="flex wrap">
+          <span class="tags" *ngFor="let technologies of (work?.technologies | slice: 0:3)">
+            {{ technologies }}
+          </span>
+          <span *ngIf="work.technologies.length > 3" style="font-size:30px; color:black">...</span>
+        </div>
+        <p>
+          {{ work.shortDesc | slice: 0:120 }}
+          <span *ngIf="work.length > 120">...</span>
+          <span>News Exchange System</span>
+        </p>
+      </div>
+      <div class="buttons flex wrap">
+        <a href="{{work.site}}" target="_blank" class="btn">
+          Sayta bax
+        </a>
+        <button class="btn" (click)="goToWorkDetailPage(work)">
+          Detallı
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="paginations flex wrap flex-v-right flex-h-center">
+    <a class="text-center" *ngFor="let pagination of paginations; let i = index" (click)="generatePaginationQuery()"
+      [routerLink]="['/list/' + (i + 1)]" routerLinkActive="active">
+      {{ i + 1 }}
+    </a>
+  </div>
+</section>
+<ng-template #load>
+  <!-- <div style="font-size:30px; color:#ffe915">Loading...</div> -->
+  <div id="loading">
+    <div id="loading-center">
+      <div class="loader">
+        <div id="largeBox"></div>
+        <div id="smallBox"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>

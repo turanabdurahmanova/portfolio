@@ -1,0 +1,37 @@
+<section class="detail-sc" *ngIf="work; else load">
+  <div class="flex wrap flex-v-center">
+    <div class="col-60">
+      <img src="{{ work.img }}" alt="{{ work.title }}" />
+    </div>
+    <div class="col-60">
+      <h1>{{ work.title }}</h1>
+      <p *ngIf="work.technologies.length>1; else manyTech">Used Technologies:</p>
+      <ng-template #manyTech>Used Technology:</ng-template>
+      <div class="flex wrap">
+        <span class="tags" *ngFor="let technologie of work?.technologies;">
+          {{ technologie }}
+        </span>
+      </div>
+      <br>
+      <hr><br>
+      <!-- <div class="white" [innerHTML]="work.fields.longDesc | mdToHtml"></div> -->
+      <div class="buttons flex wrap">
+        <a href="{{ work.site }}" target="_blank" class="btn">
+          Go To Site
+        </a>
+        <button class="btn" (click)="goToProjects()">Go Back</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #load>
+  <div id="loading">
+    <div id="loading-center">
+      <div class="loader">
+        <div id="largeBox"></div>
+        <div id="smallBox"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
