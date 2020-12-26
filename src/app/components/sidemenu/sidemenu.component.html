@@ -1,35 +1,23 @@
-<div class="close text-center" (click)="isMenuOpen()">
-  <i *ngIf="opened" class="fa fa-times" aria-hidden="true"></i>
-  <i *ngIf="!opened" class="fa fa-bars" aria-hidden="true"></i>
-</div>
-<section class="side-sc" [class.openMenu]="opened">
+<section class="side">
   <div class="img-outer">
-    <div class="search" *ngIf="!isHidden()">
-      <!-- <form class="flex" #searchForm="ngForm" (ngSubmit)="search()">
-        <input type="text" name="search" id="search" [(ngModel)]="searchedWorks" placeholder="Search..." required />
-        <button class="tab" (click)="search()" [disabled]="searchForm.invalid">search</button>
-      </form> -->
-      <a href="#" target="_blank">Turan Abdurahmanova: CV</a>
-    </div>
     <img src="./assets/imgs/pic00.jpg" alt="Turan Abdurahmanova" />
   </div>
-
   <div class="flex">
-    <div [class.active]="education" class="tab flex flex-v-center col-20" (click)="getChosenSpeciality('education')">
-      <!-- <img src="./assets/icons/user-graduate-solid.svg" alt=""> -->
-      <i class="icon-user-graduate-solid"></i>
+    <div [class.active]="education" class="tab " (click)="getChosenSpeciality('education')">
+      <img src="./assets/icons/user-graduate-solid.svg" alt="">
+      <!-- <i class="icon-user-graduate-solid"></i> -->
     </div>
-    <div [class.active]="skills" class="tab flex flex-v-center col-20" (click)="getChosenSpeciality('skills')">
-      <!-- <img src="./assets/icons/laptop-code-solid.svg" alt=""> -->
-      <i class="icon-laptop-code-solid"></i>
+    <div [class.active]="skills" class="tab " (click)="getChosenSpeciality('skills')">
+      <img src="./assets/icons/laptop-code-solid.svg" alt="">
+      <!-- <i class="icon-laptop-code-solid"></i> -->
     </div>
-    <div [class.active]="experience" class="tab flex flex-v-center col-20" (click)="getChosenSpeciality('experience')">
-      <!-- <img src="./assets/icons/briefcase-solid.svg" alt=""> -->
-      <i class="icon-briefcase-solid"></i>
+    <div [class.active]="experience" class="tab " (click)="getChosenSpeciality('experience')">
+      <img src="./assets/icons/briefcase-solid.svg" alt="">
+      <!-- <i class="icon-briefcase-solid"></i> -->
     </div>
-    <div [class.active]="contacts" class="tab flex flex-v-center col-20" (click)="getChosenSpeciality('contacts')">
-      <!-- <img src="./assets/icons/file-signature-solid.svg" alt=""> -->
-      <i class="icon-file-signature-solid"></i>
+    <div [class.active]="contacts" class="tab " (click)="getChosenSpeciality('contacts')">
+      <img src="./assets/icons/file-signature-solid.svg" alt="">
+      <!-- <i class="icon-file-signature-solid"></i> -->
     </div>
   </div>
   <div class="speciality-content" *ngIf="education">
@@ -47,129 +35,104 @@
       </li>
     </ul>
   </div>
-  <div *ngIf="skills" class="speciality-content">
-    <div class="content">
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">95%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">Html/Html5</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-95"></div>
-        </div>
-        <div class="clearfix"></div>
+  <div *ngIf="skills" class="speciality-content" style="padding-right: 20px;">
+    <div class="my-md-100">
+      <div class="skills">Html/Html5</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-95"></div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">95%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">CSS/CSS3</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-95"></div>
-        </div>
-        <div class="clearfix"></div>
+      <div class="count">
+        <div class="progress">95%</div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">95%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">SASS</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-95"></div>
-        </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">CSS/CSS3</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-95"></div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">70%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">JavaScript</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-70"></div>
-        </div>
-        <div class="clearfix"></div>
+      <div class="count">
+        <div class="progress">95%</div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">40%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">C# (ASP.NET)</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-40"></div>
-        </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">Bootstrap</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-95"></div>
       </div>
-      <h1>Frameworks / Libraries</h1>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">80%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">Angular 8</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-80"></div>
-        </div>
-        <div class="clearfix"></div>
+      <div class="count">
+        <div class="progress">95%</div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">80%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">jQuery</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-80"></div>
-        </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">SASS</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-95"></div>
       </div>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">95%</div>
-        </div>
-        <div class="skills">Bootstrap</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-95"></div>
-        </div>
-        <div class="clearfix"></div>
+      <div class="count">
+        <div class="progress">95%</div>
       </div>
-      <h1>Tools</h1>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">90%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">Git &amp; Github</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-90"></div>
-        </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">JavaScript</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-80"></div>
       </div>
-      <h1>Databases</h1>
-      <div class="my-md-100">
-        <div class="count">
-          <div class="progress">40%</div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="skills">MsSql</div>
-        <div class="progress_defalut my-md-50">
-          <div class="progress_main skill-40"></div>
-        </div>
-        <div class="clearfix"></div>
+      <div class="count">
+        <div class="progress">80%</div>
       </div>
-      <div class="clearfix"></div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">jQuery</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-80"></div>
+      </div>
+      <div class="count">
+        <div class="progress">80%</div>
+      </div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">Angular 8</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-80"></div>
+      </div>
+      <div class="count">
+        <div class="progress">80%</div>
+      </div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">Git &amp; Github</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-60"></div>
+      </div>
+      <div class="count">
+        <div class="progress">60%</div>
+      </div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">C# (ASP.NET)</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-20"></div>
+      </div>
+      <div class="count">
+        <div class="progress">20%</div>
+      </div>
+    </div>
+    <div class="my-md-100">
+      <div class="skills">MsSql</div>
+      <div class="progress_defalut my-md-50">
+        <div class="progress_main skill-20"></div>
+      </div>
+      <div class="count">
+        <div class="progress">20%</div>
+      </div>
     </div>
   </div>
   <div *ngIf="experience" class="speciality-content">
     <ul>
       <li>
-        <b>Front-end Developer </b>
+        <b>Front-End Developer </b>
         <p>Innovations Center
-          <br>Yanvar 2020 - Now
+          <br>Yanvar 2020
         </p>
       </li>
       <li>
@@ -181,7 +144,7 @@
       <li>
         <b>Mentor</b>
         <p>
-          Code for Future
+          Code for Future layihəsi
           <br>Avqust 2018 - Sentyabr 2018
         </p>
       </li>
@@ -190,24 +153,17 @@
   <div *ngIf="contacts" class="speciality-content">
     <ul>
       <li>
-        <b>LinkedIn</b>
-        <p>
-          <a href="https://www.linkedin.com/in/turan-abdurahmanova-2a2312180/" target="_blank">Show Profile</a>
-        </p>
+        <b>linkedin:<a href="https://www.linkedin.com/in/turan-abdurahmanova-2a2312180/" target="_blank">show
+            profile</a></b>
       </li>
       <li>
-        <b>Mobile &amp; Telegram</b>
-        <p>+(994)50-350-42-90</p>
+        <b>mobile&amp;Telegram:+(994)50-350-42-90</b>
       </li>
       <li>
-        <b>Mail</b>
-        <p>turancha@code.edu.az</p>
+        <b>mail:turancha@code.edu.az</b>
       </li>
       <li>
-        <b>Github</b>
-        <p>
-          <a href="https://github.com/turanabdurahmanova" target="_blank">github.com/turanabdurahmanova</a>
-        </p>
+        <b><a href="https://github.com/turanabdurahmanova" target="_blank">github.com/turanabdurahmanova</a></b>
       </li>
     </ul>
   </div>

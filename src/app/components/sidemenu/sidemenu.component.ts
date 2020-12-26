@@ -12,20 +12,14 @@ export class SidemenuComponent implements OnInit {
   searchedWorks = '';
   // profileImgs: Entry<any>[] = [];
   opened: boolean = false;
-  education: boolean = true;
+  education: boolean = false;
   experience: boolean = false;
   contacts: boolean = false;
-  skills: boolean = false;
+  skills: boolean = true;
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.persons = [
-      'personal',
-      'education',
-      'skills',
-      'experience',
-      'contacts',
-    ];
+    this.persons = ['education', 'skills', 'experience', 'contacts'];
 
     // this.contentfulService
     //   .getProfileImgs()

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-project-list',
@@ -8,87 +6,54 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./project-list.component.scss'],
 })
 export class ProjectListComponent implements OnInit {
-  allWorks: any[] = [];
-  filteredWorks: any[] = [];
-  skipId: number = 0;
-  paginations: any;
   works: any[] = [];
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private sharedService: SharedService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
     this.works = [
       {
         id: 1,
-        img: './assets/imgs/3in.png',
+        img: './assets/imgs/3in-logo.svg',
         title: 'New Learning',
-        shortDesc: 'News Exchange System',
+        shortDesc:
+          'Psixoloji konsultasiyalar, kouçinq konsultasiyası, korporativ analizlər, təlim xidmətləri.',
         technologies: ['Angular 9'],
         site: 'http://3in.sinaps.az/',
       },
       {
         id: 2,
-        img: './assets/imgs/esgeremektub.png',
+        img: './assets/imgs/esgeremektub-2.svg',
         title: 'Əsgərə məktub',
-        shortDesc: 'Asan Konulluler',
-        technologies: [' HTML ', 'SASS', ' JQUERY ', ' BOOTSTRAP '],
+        shortDesc:
+          '"ASAN Könüllüləri" Təşkilatının "Əsgərə Məktub" layihəsi çərçivəsində könüllülərimiz və xidmət almağa gələn vətəndaşlarımız igid əsgərlərimizə öz məktublarını ünvanlayırlar.',
+        technologies: ['SASS', ' JQUERY ', ' BOOTSTRAP '],
         site: 'https://esgeremektub.az/',
       },
+      {
+        id: 3,
+        img: './assets/imgs/logo-white.png',
+        title: 'Asan Learning',
+        shortDesc:
+          '“İnnovasiyalar Mərkəzi” MMC tərəfindən yüksək ixtisaslı mütəxəssislərin hazırlanması, kadrların karyera inkişafının planlanmasının dəstəklənməsi, bacarıqlarının inkişaf etdirilməsi, kadr potensialının gücləndirilməsi məqsədi ilə dövlət və özəl qurumların ehtiyaclarına uyğun yaradıcı mühit yaratmaqla multi-funksional, fəal və interaktiv təlimlər keçirilməkdədir.          Təlimlərimizin əsas istiqamətlərini şəxsi inkişaf, idarəetmə, keyfiyyət və davamlı təkmilləşmə və yüksək texnologiyalara aid mövzular təşkil edir.',
+        technologies: ['Angular 8 '],
+        site: 'https://asanlearning.az/',
+      },
+      {
+        id: 4,
+        img: './assets/imgs/techland.svg',
+        title: 'Techland',
+        shortDesc: 'Xəbər saytı',
+        technologies: ['Angular 8 '],
+        site: 'https://techland.az/',
+      },
+      {
+        id: 5,
+        img: './assets/imgs/intransco.svg',
+        title: 'İntransco',
+        shortDesc: 'Yük daşıma saytı',
+        technologies: ['SASS', ' JQUERY ', ' BOOTSTRAP '],
+        site: 'https://intransco.rahmanov.info/',
+      },
     ];
-    this.getAllWorks();
-  }
-
-  goToWorkDetailPage(work: any) {
-    this.router.navigate(['/detail', work.id]);
-    this.sharedService.work = work;
-  }
-
-  getAllWorks() {
-    // this.contentfulService.getWorks().then((works) => {
-    //   this.allWorks = works;
-    //   const paginationCount = Math.ceil(this.allWorks.length / 6);
-    //   this.paginations = Array(paginationCount).fill((x, i) => i);
-    //   this.generatePaginationQuery();
-    // });
-  }
-
-  generatePaginationQuery() {
-    this.filteredWorks = [];
-    // setTimeout(() => {
-    //   this.skipId = +this.route.snapshot.paramMap.get('skip');
-    //   let limit;
-    //   let skipVal = this.allWorks.length - 6 - (this.skipId - 1) * 6;
-    //   if (this.paginations.length > 1) {
-    //     if (this.skipId <= this.paginations.length && this.skipId > 0) {
-    //       if (this.allWorks.length - 6 - (this.skipId - 1) * 6 < 0) {
-    //         skipVal = 0;
-    //         limit = this.allWorks.length % 6;
-    //       } else {
-    //         limit = 6;
-    //       }
-
-    //       if (this.allWorks.length > 0) {
-    //         const query = {
-    //           sys: { type: 'Array' },
-    //           skip: skipVal,
-    //           limit: limit,
-    //         };
-
-    //         this.contentfulService.getWorks(query).then((works) => {
-    //           this.filteredWorks = works;
-    //         });
-    //       } else {
-    //         this.generatePaginationQuery();
-    //       }
-    //     } else {
-    //       this.router.navigate(['/error']);
-    //     }
-    //   } else {
-    //     console.log(this.paginations.length);
-    //   }
-    // }, 200);
   }
 }

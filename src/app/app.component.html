@@ -1,17 +1,8 @@
 <div class="flex wrap">
-  <div class="col-25 side-sc-container">
+  <div class="col-25">
     <app-sidemenu></app-sidemenu>
   </div>
-  <div class="col-75 side-sc-container" style="position: relative">
-    <div class="work-types">
-      <img src="./assets/icons/laptop-code-solid.svg" alt="">
-      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        real layihələr
-      </a>
-      <a [routerLink]="['/other']" routerLinkActive="active">
-        öyrənmək üçün etdiklərim
-      </a>
-    </div>
+  <div class="col-75" style="position: relative">
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,74 +1,90 @@
-$yellow: black;
-$blue: #2a00b2;
-$black: #484848;
-
-.works-sc {
+.works {
   position: relative;
-  z-index: 50;
+  z-index: 5;
   min-height: 100vh;
+  .card {
+    padding: 12px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    width: 33.33%;
+    .img-outer {
+      height: 200px;
+      overflow: hidden;
+      border: 3px solid #333;
+      padding: 20px;
+      img {
+        display: flex;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 34px;
+      margin: 15px 0;
+      text-transform: capitalize;
+    }
+    .content {
+      width: 100%;
+      overflow-y: auto;
+      .tags {
+        display: flex;
+        span {
+          background: transparent;
+          border: 2px solid #333;
+          margin-right: 10px;
+          padding: 5px 10px;
+        }
+      }
+      p {
+        color: #333;
+        margin: 20px 0 25px;
+      }
+    }
+    .buttons {
+      display: flex;
+      a {
+        background: #333;
+        border: 2px solid transparent;
+        cursor: pointer;
+        padding: 7px 10px;
+        transition: 0.3s ease-in-out;
+        color: white;
+        width: 100%;
+        text-align: center;
+        font: {
+          size: 17px;
+        }
+        &:hover {
+          background: transparent;
+          color: #333 !important;
+          border: 2px solid #333;
+        }
+      }
+    }
+  }
 }
 
-.card {
-  padding: 12px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  .content {
+@media (max-width: 1024px) {
+  .works .card {
+    width: 50%;
+    .content p {
+      height: 40px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .works .card {
     width: 100%;
-    overflow-y: auto;
-    p {
-      color: black;
+    .content p {
+      height: auto;
     }
   }
 }
 
-.img-outer {
-  height: 200px;
-  overflow: hidden;
-  img {
-    display: flex;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-h2 {
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 34px;
-  margin: 10px 0;
-  color: $yellow;
-  text-transform: capitalize;
-  margin-bottom: 6px;
-}
-
-p {
-  margin-top: 10px;
-  color: white;
-}
-
-.paginations {
-  position: sticky;
-  bottom: 0px;
-  right: 0px;
-  z-index: 50;
-  width: 100%;
-  height: 40px;
-  // background: $black;
-  box-shadow: 0px 2px 26px black;
-  box-sizing: border-box;
-  a {
-    padding: 0px 9px;
-    width: 25px;
-    color: white;
-    transition: 0.3s ease-in-out;
-    font: {
-      size: 18px;
-    }
-    &.active {
-      color: $yellow;
-    }
-    &:hover {
-      color: $yellow;
-    }
+@media (max-width: 576px) {
+  section.works {
+    height: auto !important;
   }
 }
