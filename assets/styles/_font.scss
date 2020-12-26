@@ -1,15 +1,15 @@
 @font-face {
   font-family: "fontello";
-  src: url("/assets/fonts/fontello-icon/font/fontello.eot?50398449");
-  src: url("/assets/fonts/fontello-icon/font/fontello.eot?50398449#iefix")
+  src: url("/assets/fonts/fontello-icon/font/fontello.eot?29801208");
+  src: url("/assets/fonts/fontello-icon/font/fontello.eot?29801208#iefix")
       format("embedded-opentype"),
-    url("/assets/fonts/fontello-icon/font/fontello.woff2?50398449")
+    url("/assets/fonts/fontello-icon/font/fontello.woff2?29801208")
       format("woff2"),
-    url("/assets/fonts/fontello-icon/font/fontello.woff?50398449")
+    url("/assets/fonts/fontello-icon/font/fontello.woff?29801208")
       format("woff"),
-    url("/assets/fonts/fontello-icon/font/fontello.ttf?50398449")
+    url("/assets/fonts/fontello-icon/font/fontello.ttf?29801208")
       format("truetype"),
-    url("/assets/fonts/fontello-icon/font/fontello.svg?50398449#fontello")
+    url("/assets/fonts/fontello-icon/font/fontello.svg?29801208#fontello")
       format("svg");
   font-weight: normal;
   font-style: normal;
@@ -17,13 +17,13 @@
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-      font-family: 'fontello';
-      src: url('/assets/fonts/fontello-icon/font/fontello.svg?50398449#fontello') format('svg');
-    }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('/assets/fonts/fontello-icon/font/fontello.svg?29801208#fontello') format('svg');
   }
-  */
+}
+*/
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
@@ -61,27 +61,15 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-book-reader-solid:before {
+.icon-briefcase-solid:before {
   content: "\e816";
 } /* '' */
-.icon-briefcase-solid:before {
+.icon-file-signature-solid:before {
   content: "\e817";
 } /* '' */
-.icon-code-solid:before {
+.icon-laptop-code-solid:before {
   content: "\e818";
 } /* '' */
-.icon-file-code-regular:before {
+.icon-user-graduate-solid:before {
   content: "\e819";
 } /* '' */
-.icon-file-code-solid:before {
-  content: "\e81a";
-} /* '' */
-.icon-file-signature-solid:before {
-  content: "\e81b";
-} /* '' */
-.icon-laptop-code-solid:before {
-  content: "\e81c";
-} /* '' */
-.icon-user-graduate-solid:before {
-  content: "\e81d";
-} /* '' */
